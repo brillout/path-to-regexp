@@ -2,9 +2,9 @@
 // - https://github.com/ReactTraining/react-router/blob/6e9d819dd579715a6cb7502f31bdb25e206c82d6/packages/react-router/modules/matchPath.js
 // - https://github.com/ReactTraining/react-router/blob/6e9d819dd579715a6cb7502f31bdb25e206c82d6/packages/react-router/package.json
 
-const pathToRegex = require('path-to-regexp');
+const pathToRegexp = require('path-to-regexp');
 
-module.export = matchPath;
+module.exports = matchPath;
 
 const cache = {};
 const cacheLimit = 10000;

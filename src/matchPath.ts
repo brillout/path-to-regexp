@@ -1,14 +1,10 @@
-// CJS copy of:
+// Copy of:
 // - https://github.com/ReactTraining/react-router/blob/6e9d819dd579715a6cb7502f31bdb25e206c82d6/packages/react-router/modules/matchPath.js
 // - https://github.com/ReactTraining/react-router/blob/6e9d819dd579715a6cb7502f31bdb25e206c82d6/packages/react-router/package.json
 
-const pathToRegexp = require('path-to-regexp');
+import pathToRegexp from 'path-to-regexp';
 
-// Copied from some random TS build
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.matchPath = void 0;
-Object.defineProperty(exports, "matchPath", { enumerable: true, get: function () { return matchPath } });
+export { matchPath }
 
 const cache = {};
 const cacheLimit = 10000;
@@ -40,7 +36,7 @@ function matchPath(pathname, options = {}) {
     options = { path: options };
   }
 
-  const { path, exact = false, strict = false, sensitive = false } = options;
+  const { path, exact = false, strict = false, sensitive = false } = options as any;
 
   const paths = [].concat(path);
 

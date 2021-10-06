@@ -1,15 +1,15 @@
 {
   "name": "@brillout/path-to-regexp",
-  "main": "./dist/matchPath.js",
-  "version": "0.2.1",
   "description": "Vanilla copy of React Router's path-to-regexp mod",
+  "version": "0.2.2",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "npm run tsc:watch",
     "build": "npm run tsc:once",
     "tsc:watch": "tsc --build --watch",
     "tsc:once": "tsc --build",
-    "clean": "git clean -Xdf",
-    "prepublishOnly": "npm run clean && npm install && npm run build"
+    "clean": "rm -r dist/",
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "dependencies": {
     "path-to-regexp": "^1.7.0"

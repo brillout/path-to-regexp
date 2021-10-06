@@ -4,7 +4,11 @@
 
 const pathToRegexp = require('path-to-regexp');
 
-module.exports = matchPath;
+// Copied from some random TS build
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.matchPath = void 0;
+Object.defineProperty(exports, "matchPath", { enumerable: true, get: function () { return matchPath } });
 
 const cache = {};
 const cacheLimit = 10000;

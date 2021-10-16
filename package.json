@@ -1,22 +1,31 @@
 {
   "name": "@brillout/path-to-regexp",
   "description": "Vanilla copy of React Router's path-to-regexp mod",
-  "version": "0.2.3",
-  "main": "dist/index.js",
+  "version": "0.3.1",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "exports": {
+    ".": {
+      "node": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js"
+    }
+  },
   "scripts": {
-    "dev": "npm run tsc:watch",
-    "build": "npm run tsc:once",
-    "tsc:watch": "tsc --build --watch",
-    "tsc:once": "tsc --build",
-    "clean": "rm -r dist/",
-    "prepublishOnly": "npm run clean && npm run build"
+    "dev": "npm run tsc:watch:node",
+    "build": "npm run clean && npm run tsc:esm && npm run tsc:cjs",
+    "tsc:esm": "tsc",
+    "tsc:cjs": "tsc --project ./tsconfig.cjs.json",
+    "tsc:watch:esm": "tsc --incremental --watch",
+    "tsc:watch:cjs": "tsc --incremental --watch --project ./tsconfig.cjs.json",
+    "clean": "rm -rf dist/",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "path-to-regexp": "^1.7.0"
   },
   "devDependencies": {
-    "@types/node": "^14.11.2",
-    "typescript": "^4.0.3"
+    "@types/node": "16.10.2",
+    "typescript": "^4.4.4"
   },
   "repository": "github:brillout/path-to-regexp",
   "publishConfig": {
